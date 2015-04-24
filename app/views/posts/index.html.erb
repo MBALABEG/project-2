@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table class=" table table-hover">
+      <tr >
+        <td> <strong>Blog </strong></td>
+        <td> <strong>Description</strong></td>
+        <td></td>
+      </tr>
+      <% @posts.each do | p | %>
+        <tr class=" active " >
+          <td><%= p.title %></td>
+          <td><%= p.body %></td>
+          <td><%= link_to "Show Post", post_path(p) , class: "btn btn-primary btn-xs" %></td>
+        </tr>
+      <%end%>
+    </table>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postModal">Add a New Post
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: "post_form" %>
