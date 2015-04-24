@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423021813) do
+ActiveRecord::Schema.define(version: 20150424030415) do
 
   create_table "sales_people", force: :cascade do |t|
     t.boolean  "admin"
-    t.string   "firstName"
+    t.string   "name"
+    t.string   "password_digest"
     t.string   "lastLame"
     t.string   "address"
     t.string   "phone"
     t.string   "email"
     t.date     "startDate"
     t.string   "commissionRate"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -36,6 +37,20 @@ ActiveRecord::Schema.define(version: 20150423021813) do
     t.string   "vendorRate"
     t.string   "float"
     t.string   "comment"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.boolean  "admin"
+    t.string   "name"
+    t.string   "password_digest"
+    t.string   "lastLame"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "email"
+    t.date     "startDate"
+    t.string   "commissionRate"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
