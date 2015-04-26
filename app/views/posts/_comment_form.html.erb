@@ -1,6 +1,6 @@
 <%= form_for([@post, @comment]) do  | f |%>
 		<div class="form-group">
-			<p><%= f.label :body, 'Write a comment' %></p>
+			<p><%= f.label :body, 'Write a comment about this vendor' %></p>
 			<p><%= f.text_area :body, class: 'form-control'%></p>
 			<% if current_user %>
 				<p><%= f.hidden_field :user_id, value: current_user.id%></p>
@@ -10,7 +10,7 @@
 		</div>
 		<div class="row">
 		<div class="col-md-2 col-md-offset-5">
-		<%=  f.submit "Post Comment", class: "btn btn-lg" %>
+		<%=  f.submit "Post a comment about this vendor", class: "btn btn-lg" %>
 		</div>
 		</div>
 	<%end%>
